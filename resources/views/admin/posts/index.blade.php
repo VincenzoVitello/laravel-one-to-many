@@ -8,6 +8,8 @@
         <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <a href="{{route('admin.posts.create')}}"><button>crea nuovo post</button></a>
+
 @endauth
 @foreach($posts as $element)
     <div class="posts_container">
@@ -21,7 +23,5 @@
         </form>
     </div>
 @endforeach
-<br>
-<a href="{{route('admin.posts.create')}}"><button>crea nuovo post</button></a>
 
 @endsection
