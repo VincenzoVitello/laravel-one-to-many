@@ -11,8 +11,14 @@
     </div>
     <div class="form-group">
       <label for="content">Content:</label>
-      <textarea class="form-control" id="content" name="content" >{{$post->content}}</textarea>
+      <input type="text" id="content" name="content" {{$post->content}}>
     </div>
+    <select name="category_id" id="">
+      <option value="">-- Seleziona categoria --</option>
+      @foreach ($categories as $category)
+         <option value="{{$category->id}}">{{$category->name}}</option>
+      @endforeach
+    </select>
     <input type="submit" value="Confirm">
   </form>
 

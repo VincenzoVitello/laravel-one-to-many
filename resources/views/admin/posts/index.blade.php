@@ -14,7 +14,9 @@
 @foreach($posts as $element)
     <div class="posts_container">
         <h1>{{$element->title}}</h1>
+        <h2>categorie: {{$element->category? $element->category->name : 'non appartiene a nessuna categoria'}}</h2>
         <p>{{$element->content}}</p>
+        
         <a href="{{route('admin.posts.show', $element->id)}}"><button>mostra post</button></a>
         <form action="{{route("admin.posts.destroy", $element->id)}}" method="POST">
             @csrf
